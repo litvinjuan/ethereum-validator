@@ -1,0 +1,14 @@
+{
+    "name": "litvinjuan/php-ethereum-validator",
+    "description": "PHP implementation to validate ethereum addresses",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Litvin",
+            "email": "litvinjuan@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
