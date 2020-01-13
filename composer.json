@@ -30,16 +30,21 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
+        "cghooks": "vendor/bin/cghooks",
+        "post-install-cmd": "cghooks add --ignore-lock",
+        "post-update-cmd": "cghooks update",
+        "test": "phpunit",
+        "cs-fix": "php-cs-fixer fix .",
+        "cs-check": "php-cs-fixer fix --dry-run ."
     },
     "hooks": {
         "pre-commit": [
-            "php-cs-fixer fix ."
+            "composer cs-fix"
         ],
         "commit-msg": "grep -q '[A-Z]+-[0-9]+,.*' $1",
         "pre-push": [
-            "php-cs-fixer fix --dry-run .",
-            "phpunit"
+            "composer cs-check",
+            "composer test"
         ],
         "post-merge": "composer install"
     },

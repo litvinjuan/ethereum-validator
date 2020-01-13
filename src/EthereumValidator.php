@@ -6,7 +6,6 @@ use kornrunner\Keccak;
 
 class EthereumValidator
 {
-
     public static function isValidAddress(string $address): bool
     {
         if (! static::matchesPattern($address)) {
@@ -50,7 +49,7 @@ class EthereumValidator
         }
 
         // See: https://github.com/web3j/web3j/pull/134/files#diff-db8702981afff54d3de6a913f13b7be4R42
-        for ($i = 0; $i < 40; $i++ ) {
+        for ($i = 0; $i < 40; $i++) {
             if (ctype_alpha($address[$i])) {
                 // Each uppercase letter should correlate with a first bit of 1 in the hash char with the same index,
                 // and each lowercase letter with a 0 bit.
@@ -64,5 +63,4 @@ class EthereumValidator
 
         return true;
     }
-
 }

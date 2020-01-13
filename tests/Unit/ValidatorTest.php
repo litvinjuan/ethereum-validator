@@ -7,7 +7,6 @@ use PHPUnit\Framework\TestCase;
 
 class ValidatorTest extends TestCase
 {
-
     public function test_validates_valid_address()
     {
         $this->assertTrue(EthereumValidator::isValidAddress('0x71c7656ec7ab88b098defb751b7401b5f6d8976f'));
@@ -63,5 +62,4 @@ class ValidatorTest extends TestCase
         $this->assertFalse(EthereumValidator::isValidAddress('address'));
         $this->assertFalse(EthereumValidator::isValidAddress('ethereum'));
     }
-
 }
