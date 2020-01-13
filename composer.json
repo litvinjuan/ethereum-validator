@@ -1,7 +1,8 @@
 {
-    "name": "litvinjuan/php-ethereum-validator",
+    "name": "litvinjuan/ethereum-validator",
     "description": "PHP implementation to validate ethereum addresses",
     "type": "library",
+    "homepage": "https://github.com/litvinjuan/ethereum-validator",
     "license": "MIT",
     "authors": [
         {
@@ -9,6 +10,39 @@
             "email": "litvinjuan@gmail.com"
         }
     ],
+    "require": {
+        "php": "^7.0",
+        "greensea/keccak": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "brainmaestro/composer-git-hooks": "^2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "litvinjuan\\EthereumValidator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "litvinjuan\\EthereumValidator\\Test\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "hooks": {
+        "pre-commit": [
+            "php-cs-fixer fix ."
+        ],
+        "commit-msg": "grep -q '[A-Z]+-[0-9]+,.*' $1",
+        "pre-push": [
+            "php-cs-fixer fix --dry-run .",
+            "phpunit"
+        ],
+        "post-merge": "composer install"
+    },
     "minimum-stability": "dev",
-    "require": {}
+    "prefer-stable": true
 }
