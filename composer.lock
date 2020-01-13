@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "32ace713636dda946ff5679d0466b248",
+    "content-hash": "38122ac9d9c507e7174e462c187fe252",
     "packages": [
         {
             "name": "greensea/keccak",

@@ -37,16 +37,18 @@
         "cs-fix": "php-cs-fixer fix .",
         "cs-check": "php-cs-fixer fix --dry-run ."
     },
-    "hooks": {
-        "pre-commit": [
-            "composer cs-fix"
-        ],
-        "commit-msg": "grep -q '[A-Z]+-[0-9]+,.*' $1",
-        "pre-push": [
-            "composer cs-check",
-            "composer test"
-        ],
-        "post-merge": "composer install"
+    "extra": {
+        "hooks": {
+            "pre-commit": [
+                "composer cs-fix"
+            ],
+            "commit-msg": "grep -q '[A-Z]+-[0-9]+,.*' $1",
+            "pre-push": [
+                "composer cs-check",
+                "composer test"
+            ],
+            "post-merge": "composer install"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true
