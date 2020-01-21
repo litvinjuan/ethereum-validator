@@ -42,12 +42,10 @@
             "pre-commit": [
                 "composer cs-fix"
             ],
-            "commit-msg": "grep -q '[A-Z]+-[0-9]+,.*' $1",
             "pre-push": [
                 "composer cs-check",
                 "composer test"
-            ],
-            "post-merge": "composer install"
+            ]
         }
     },
     "minimum-stability": "dev",
